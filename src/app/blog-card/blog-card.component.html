@@ -1,0 +1,11 @@
+
+<div class="card">
+  <img [src]="cardData.image" alt="">
+
+  <div class="info">
+    <h2>{{cardData.title}}</h2>
+    <a [href]="cardData.url">{{cardData.urlName}}</a>
+    <button mat-raised-button (click)="onDeletePost()">Delete Post</button>
+  </div>
+
+</div>

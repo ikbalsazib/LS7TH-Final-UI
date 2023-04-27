@@ -1,0 +1,47 @@
+
+
+<mat-card *ngIf="contactData">
+  <h2>Name: {{contactData.name}}</h2>
+  <p>Gender: {{contactData.gender}}</p>
+  <p>Married Status: {{contactData.isMarried}}</p>
+  <p>Address: {{contactData.address}}</p>
+</mat-card>
+
+
+
+<form #dataForm="ngForm" (ngSubmit)="onSubmitForm(dataForm)">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input ngModel name="name" required matInput type="text" placeholder="Enter your full name.">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field> <!-- Mat Input -->
+
+  <mat-form-field appearance="outline">
+    <mat-label>Gender</mat-label>
+    <mat-select ngModel name="gender" required>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+      <mat-option value="Others">Others</mat-option>
+    </mat-select>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field> <!-- Mat Select -->
+
+
+ <div class="radio-area">
+   <p>Select Married Status</p>
+   <mat-radio-group ngModel name="isMarried" aria-label="Select a Married Status">
+     <mat-radio-button value="true">Yes</mat-radio-button>
+     <mat-radio-button value="false">No</mat-radio-button>
+   </mat-radio-group>
+ </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <textarea ngModel name="address" rows="3" matInput type="text" placeholder="Enter your full address"></textarea>
+  </mat-form-field>  <!-- Mat Text Area -->
+
+  <div class="action">
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </div>
+
+</form> <!-- Template Driven Form -->

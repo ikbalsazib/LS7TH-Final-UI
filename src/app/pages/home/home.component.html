@@ -1,0 +1,17 @@
+
+<div class="action">
+    <button  mat-raised-button color="primary" (click)="addPost()">Add Post</button>
+  <!--  <button  mat-raised-button color="warn" (click)="onClickButtonHide()">Hide Post</button>-->
+  <button mat-raised-button color="accent" (click)="onTogglePost()">
+    {{postVisibility === true ? 'Hide Post' : 'Show Post'}}
+  </button>
+
+</div>
+
+<h1>{{selectPost?.title}}</h1>
+
+
+<div class="container" *ngIf="postVisibility === true">
+  <app-blog-card *ngFor="let data of blogs" [cardData]="data" (onSelectPost)="onChildPotsClick($event)"></app-blog-card>
+</div>
+

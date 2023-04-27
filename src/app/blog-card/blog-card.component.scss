@@ -1,0 +1,31 @@
+
+.card {
+  width: 100%;
+  height: 314px;
+  border: 1px solid;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .info {
+    position: absolute;
+    background: rgba(0,0,0,.6);
+    padding: 5px 24px;
+    bottom: 24px;
+    left: 12px;
+
+    h2 {
+      color: #fff;
+      margin: 0;
+      font-size: 24px;
+    }
+    a {
+      color: #0099e0;
+      font-size: 16px;
+    }
+
+  }
+}
